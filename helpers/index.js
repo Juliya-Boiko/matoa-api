@@ -3,5 +3,5 @@ const handleErrors = require('./handleErrors');
 
 module.exports = {
   controllerWrapper,
-  handleErrors
+  handleErrors,
 }

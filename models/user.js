@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const userSchema = Schema({
   name: {
     type: String,
-    default: '',
+    default: ""
   },
   password: {
     type: String,
@@ -15,6 +15,12 @@ const userSchema = Schema({
     unique: true,
   },
 });
+
+userSchema.methods.formattedName = function () {
+  if (!this.name === " ") {
+    return this.email[0].toUpperCase();
+  }
+};
 
 const User = model('user', userSchema);
 
